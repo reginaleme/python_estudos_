@@ -108,6 +108,45 @@ for i in array:
     print(i + "-" + array[i])
 
 
-# converte o array em uma tupla
+# converte o array em uma tupla e exibe chave + seus valores
 for i in array.items():
     print(i)
+    
+    
+# exibe somente os seus valores
+for i in array.values():
+    print(i)
+    
+    
+# exibe somente as chaves
+for i in array.keys():
+    print(i)
+    
+    
+# ------------------- RETORNAR NUMEROS ALEATÓRIOS --------------------
+import random
+
+random.seed(5) # comando para fixar um número
+numero = random.randint(0,10) # comando para escolher aleatório de 0 a 10
+print(numero)
+
+
+lista = [5,49,62]
+numero = random.choice(lista) # comando para escolher aleatório o conteudo de lista
+print(numero)
+
+
+
+# ------------------- TRATAMENTO DE EXCEÇÕES --------------------
+a = 2
+b = 0
+
+try:
+    print(a / b)
+except:
+    print("Não é permitido divisão por zero")
+
+
+
+
+    
