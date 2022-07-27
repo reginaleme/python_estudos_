@@ -145,8 +145,107 @@ try:
     print(a / b)
 except:
     print("Não é permitido divisão por zero")
-
-
-
-
     
+    
+    
+
+# ------------------- LIST COMPREHENSION --------------------
+x = [1,2,3,4,5]
+y = []
+
+for i in x:
+    y.append(i**2)
+    
+print(x)
+print(y)
+
+
+# usando a list comprehension
+x = [1,2,3,4,5]
+#y = [valor_a_adicionar laco condicao]
+y = [i**2 for i in x]
+
+print(x)
+print(y)
+
+
+# imprimindo somente número impar (usando a parte da condicao agora)
+x = [1,2,3,4,5]
+z = [i for i in x if i%2==1]
+
+print(z)
+
+
+
+# ------------------- FUNCAO ENUMERATE --------------------
+lista = ["abacaxi", "regina", "uva"]
+
+for i, nome in enumerate(lista):
+    print(i, nome)
+    
+    
+    
+# ------------------- FUNCAO MAP --------------------
+# pega uma função e aplica para todos os itens da lista
+#map(função, lista)
+
+def dobro(x):
+    return x*2
+
+valor = [1,2,3,4,5]
+valor_dobrado = map(dobro, valor)
+
+for i in valor_dobrado:
+    print(i)
+    
+
+# convertendo para uma lista    
+valor_dobrado = list(valor_dobrado)    
+print(valor_dobrado)
+
+
+
+
+# ------------------- FUNCAO REDUCE --------------------
+# recebe uma lista e retorna somente um valor dessa lista
+
+from functools import reduce
+
+def soma(x,y):
+    return x+y
+
+lista = [1,2,5,6,8]
+
+#soma = reduce(funcao, lista)
+soma = reduce(soma, lista)
+print(soma)
+
+
+
+# ------------------- FUNCAO ZIP --------------------
+# concatena 2 ou mais listas
+
+lista1 = [1,2,3,4,5]
+lista2 = ["a", "b", "c", "d", "e"]
+lista3 = ["abacate", "bola", "cachorro", "dado", "elefante"]
+
+for numero, letra, descricao in zip(lista1, lista2, lista3):
+    print(numero, letra, descricao)
+    
+    
+    
+# ------------------- FILTER --------------------
+# filtra os valores retornados na função dentro da lista
+
+lista = [1,5,6,2,7]
+
+def par(x):
+    if x%2==0:
+        return x
+
+#lista2 = filter(funcao, lista)
+lista2 = filter(par, lista)
+
+for x in lista2:
+  print(x)
+
